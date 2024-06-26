@@ -1,1 +1,1 @@
-export const TOKEN = 'token'
+export const IMG_ALT = "not alt";
