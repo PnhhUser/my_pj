@@ -23,7 +23,7 @@
     height: 110%;
     background-color: white;
     border-left: 2px solid #0F4C75;
-    animation: cursor .8s infinite, typing 20s steps(14) forwards;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
 }
 
 @keyframes cursor {

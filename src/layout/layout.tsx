@@ -9,6 +9,12 @@ import {
 } from "../common/constants/path";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { useState } from "react";
+import {
+  TXT_ABOUT,
+  TXT_INDEX,
+  TXT_PROJECT,
+  TXT_SKILLS,
+} from "../common/constants/constant";
 
 function styleProps<T>(isActive: T) {
   return {
@@ -32,7 +38,11 @@ function Layout() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="w-full h-svh lg:h-lvh relative overflow-hidden">
+    <div
+      className={`w-full h-svh lg:h-lvh relative ${
+        isOpen ? "overflow-hidden" : "overflow-x-hidden"
+      }`}
+    >
       <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-5 gap-3 h-20 ">
         <div className="lg:col-end-3 col-start-1 flex justify-center items-center">
           <div className="lg:w-16 lg:h-16 w-12 h-12">
@@ -48,28 +58,28 @@ function Layout() {
                 end
                 style={({ isActive }) => styleProps(isActive)}
               >
-                Info
+                {TXT_INDEX}
               </NavLink>
               <NavLink
                 to={PATH_ABOUT_ME}
                 className="ml-6 px-4 py-2 transition-colors duration-[.6s]"
                 style={({ isActive }) => styleProps(isActive)}
               >
-                About me
+                {TXT_ABOUT}
               </NavLink>
               <NavLink
                 to={PATH_PROJECTS}
                 className="ml-6 px-4 py-2 transition-colors duration-[.6s]"
                 style={({ isActive }) => styleProps(isActive)}
               >
-                Project
+                {TXT_PROJECT}
               </NavLink>
               <NavLink
                 to={PATH_SKILLS}
                 className="ml-6 px-4 py-2 transition-colors duration-[.6s]"
                 style={({ isActive }) => styleProps(isActive)}
               >
-                Skills
+                {TXT_SKILLS}
               </NavLink>
             </nav>
           </div>
@@ -103,29 +113,33 @@ function Layout() {
             className="mr-6 px-4 py-2 transition-colors duration-[.6s]"
             end
             style={({ isActive }) => stylePropsMobile(isActive)}
+            onClick={() => setIsOpen(false)}
           >
-            Info
+            {TXT_INDEX}
           </NavLink>
           <NavLink
             to={PATH_ABOUT_ME}
             className="mr-6  px-4 py-2 transition-colors duration-[.6s]"
             style={({ isActive }) => stylePropsMobile(isActive)}
+            onClick={() => setIsOpen(false)}
           >
-            About me
+            {TXT_ABOUT}
           </NavLink>
           <NavLink
             to={PATH_PROJECTS}
             className="mr-6  px-4 py-2 transition-colors duration-[.6s]"
             style={({ isActive }) => stylePropsMobile(isActive)}
+            onClick={() => setIsOpen(false)}
           >
-            Project
+            {TXT_PROJECT}
           </NavLink>
           <NavLink
             to={PATH_SKILLS}
             className="mr-6 px-4 py-2 transition-colors duration-[.6s]"
             style={({ isActive }) => stylePropsMobile(isActive)}
+            onClick={() => setIsOpen(false)}
           >
-            Skills
+            {TXT_SKILLS}
           </NavLink>
         </div>
       </div>
