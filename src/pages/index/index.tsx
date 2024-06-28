@@ -16,7 +16,7 @@ function Index() {
               </span>
             </p>
             <p className="kanit text-2xl font-medium mt-4 text-[#222831]">
-              I'm a{" "}
+              I'm a
               <motion.span
                 animate={{
                   opacity: [0, 0.3, 0.5, 1],
